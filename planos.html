@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos Vidigital</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .plano {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .plano:hover {
+            transform: scale(1.05);
+        }
+
+        .plano h2 {
+            margin-bottom: 10px;
+            color: #ff3333;
+        }
+
+        .plano p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .plano .preco {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .plano button {
+            background: #ff3333;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .plano button:hover {
+            background: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="plano">
+            <h2>Plano Básico</h2>
+            <p>Gerenciamento simples de redes sociais com 5 postagens mensais.</p>
+            <div class="preco">R$149/mês</div>
+            <button>Contratar</button>
+        </div>
+
+        <div class="plano">
+            <h2>Plano Intermediário</h2>
+            <p>Gerenciamento + produção audiovisual (vídeo de até 1min/mês).</p>
+            <div class="preco">R$349/mês</div>
+            <button>Contratar</button>
+        </div>
+
+        <div class="plano">
+            <h2>Plano Premium</h2>
+            <p>Full marketing + vídeos + estratégia com relatórios mensais.</p>
+            <div class="preco">R$599/mês</div>
+            <button>Solicitar Orçamento</button>
+        </div>
+    </section>
+</body>
+</html>
