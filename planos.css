@@ -204,9 +204,11 @@ h2 {
     text-align: center;
   }
 
-  .logo {
-    width: 200px;
-    margin: 0 auto;
+ .logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto; /* centraliza */
+  display: block;
   }
 
   .lado-direito {
