@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   background: url("fundo.png") no-repeat center fixed;
+   background-size: cover;
+}
+
+/* Botão de voltar */
+.btn-voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, color 0.3s;
+  z-index: 1000;
+}
+
+.btn-voltar:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Botões de idioma */
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-switch button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container-planos {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.lado-esquerdo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+  margin-left: -260px;
+}
+
+.lado-direito {
+  width: 60%;
+  padding: 10rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -100px;
+}
+
+/* TOPO */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-left: -200px;
+}
+
+.tag-beta {
+  background: white;
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+/* CAIXAS DOS PLANOS */
+.caixa-plano {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  margin-left: -100px;
+}
+
+.detalhe {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.valor,
+.descricao {
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+
+/* RODAPÉ */
+.rodape {
+  text-align: center;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  white-space: nowrap;
+  margin-left: -100px;
+}
+
+/* Esconde o input original */
+.plano-radio input[type="radio"] {
+  display: none;
+}
+
+/* Layout do label com radio estilizado */
+.plano-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Estilo da bolinha externa */
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid red;
+  border-radius: 50%;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+/* Bolinha interna (aparece quando selecionado) */
+.custom-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Mostra bolinha interna quando selecionado */
+.plano-radio input[type="radio"]:checked + .custom-radio::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 1rem;
+  }
+
+  .container-planos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .lado-esquerdo,
+  .lado-direito {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo {
+    margin: 0 auto 2rem auto;
+    width: 180px;
+  }
+
+  .lado-direito {
+    padding: 0 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .topo {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .caixa-plano {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .rodape {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .language-switch {
+    top: 10px;
+    right: 10px;
+  }
+
+  .btn-voltar {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
