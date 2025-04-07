@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planos | Vidigital</title>
+  <link rel="stylesheet" href="planos.css" />
+</head>
+<body>
+
+  <!-- Botão Voltar -->
+  <a href="index.html" class="btn-voltar" data-pt="Voltar" data-en="Back">← Voltar</a>
+
+  <!-- Troca de idioma -->
+  <div class="language-switch">
+    <button onclick="changeLanguage('pt')">PT</button>
+    <button onclick="changeLanguage('en')">EN</button>
+  </div>
+
+  <div class="container-planos">
+    <!-- LADO ESQUERDO COM LOGO -->
+    <div class="lado-esquerdo">
+      <img src="logo-vidigital.png" class="logo" alt="Logo Vidigital">
+    </div>
+
+    <!-- LADO DIREITO COM OS PLANOS -->
+    <div class="lado-direito">
+      <div class="topo">
+        <span class="tag-beta">BETA</span>
+        <h2 data-pt="NOSSOS PLANOS" data-en="OUR PLANS">NOSSOS PLANOS</h2>
+      </div>
+
+      <div class="planos">
+        <!-- PLANO GRATUITO -->
+        <div class="caixa-plano gratis">
+          <label class="plano-radio">
+            <input type="radio" name="plano" value="gratuito" />
+            <span class="custom-radio"></span>
+            <strong data-pt="PLANO GRATUITO" data-en="FREE PLAN">PLANO GRATUITO</strong>
+          </label>
+          <p class="descricao" data-pt="Por 1 mês" data-en="1 month access">Por 1 mês</p>
+        </div>
+
+        <!-- PLANO ESSENCIAL -->
+        <div class="caixa-plano essencial">
+          <label class="plano-radio">
+            <input type="radio" name="plano" value="essencial" />
+            <span class="custom-radio"></span>
+            <strong data-pt="PLANO ESSENCIAL" data-en="ESSENTIAL PLAN">PLANO ESSENCIAL</strong>
+          </label>
+          <p class="valor" data-pt="R$94/mês" data-en="$19/month">R$94/mês</p>
+        </div>
+
+        <!-- PLANO PROFISSIONAL -->
+        <div class="caixa-plano profissional">
+          <label class="plano-radio">
+            <input type="radio" name="plano" value="profissional" />
+            <span class="custom-radio"></span>
+            <strong data-pt="PLANO PROFISSIONAL" data-en="PROFESSIONAL PLAN">PLANO PROFISSIONAL</strong>
+          </label>
+          <p class="valor" data-pt="R$178/mês" data-en="$35/month">R$178/mês</p>
+        </div>
+
+        <!-- PLANO AGÊNCIA -->
+        <div class="caixa-plano agencia">
+          <label class="plano-radio">
+            <input type="radio" name="plano" value="agencia" />
+            <span class="custom-radio"></span>
+            <strong data-pt="PLANO AGÊNCIA" data-en="AGENCY PLAN">PLANO AGÊNCIA</strong>
+          </label>
+          <p class="valor" data-pt="R$300/mês" data-en="$59/month">R$300/mês</p>
+        </div>
+      </div>
+
+      <p class="rodape" data-pt="VEJA O QUE CADA PLANO INCLUI, AQUI!" data-en="SEE WHAT EACH PLAN INCLUDES, HERE!">
+        VEJA O QUE CADA PLANO INCLUI, AQUI!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const currentLang = localStorage.getItem('lang') || 'pt';
+    changeLanguage(currentLang);
+
+    function changeLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        if (el.placeholder) {
+          el.placeholder = el.getAttribute(`data-${lang}`);
+        } else {
+          el.innerText = el.getAttribute(`data-${lang}`);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
